@@ -4,6 +4,7 @@ const characterFirst = document.querySelector('.casino__table-first');
 const characterSecond = document.querySelector('.casino__table-second');
 const characterThird = document.querySelector('.casino__table-third');
 const countPoints = document.querySelector('.block-points__point');
+const pointsText = document.querySelector('.block-points__text');
 
 let points = 1500;
 countPoints.textContent = points;
@@ -15,10 +16,15 @@ function characterRendering(array) {
 
     if (array[0] === array[1] && array[1] === array[2]) {
         points += Number(array[3]);
-        countPoints.textContent = points;
+
     } else {
         points -= 50;
-        countPoints.textContent = points;
+    }
+
+    if (points < 0) {
+        pointsText.textContent = `Должен   ${points}  рублей!`;
+    } else {
+        pointsText.textContent = `У тебя   ${points}  рублей!`;
     }
 }
 
@@ -37,11 +43,9 @@ button.addEventListener('click', (event) => {
         .then(data => {
             array = [...data];
             characterRendering(array);
+
             if (array.length === 4) {
                 array.length = 0;
             }
-        })
-        .finally(() => {
-
-        })
+        });
 })
