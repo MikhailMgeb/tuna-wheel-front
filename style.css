@@ -1,0 +1,54 @@
+.page {
+    background-color: black;
+    color: azure;
+}
+
+.casino {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.casino__table {
+    font-size: 24px;
+    font-family: monospace;
+    font-weight: 900;
+    width: 33px;
+    text-align: center;
+    -webkit-animation: flip-scale-2-hor-top 0.5s linear both;
+    animation: flip-scale-2-hor-top 0.5s linear both;
+}
+
+.block-points {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.block-points__text {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.instructions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    font-size: 24px;
+}
+
+
+.button {
+    border-radius: 50%;
+    -webkit-animation: flip-scale-2-hor-top 0.5s linear both;
+    animation: flip-scale-2-hor-top 0.5s linear both;
+}
+
+.button:active {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
